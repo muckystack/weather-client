@@ -1,5 +1,23 @@
 .h-20{
     display: flex;
     height: 20vh;
-    /* background: red; */
+}
+
+.weather-status {
+    position: relative;
+    overflow: hidden;
+}
+
+.weather-background {
+    width: 130%;
+    margin-left: -15%;
+    opacity: .1;
+}
+
+.weather-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
