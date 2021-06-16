@@ -1,1 +1,3 @@
-<p>forecast works!</p>
+<div class="container">
+  <app-tomorrow-card class="m-3" *ngFor="let item of tomorrowDataArray" [data]="item"></app-tomorrow-card>
+</div>
