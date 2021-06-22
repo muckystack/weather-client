@@ -1,31 +1,110 @@
 {
-    "weatherCode": {
-        "0": "unknown",
-        "1000": "clear",
-        "1001": "cloudy",
-        "1100": "mostly_clear",
-        "1101": "partly_cloudy",
-        "1102": "mostly_cloudy",
-        "2000": "fog",
-        "2100": "light_fog",
-        "3000": "light_wind",
-        "3001": "wind",
-        "3002": "strong_wind",
-        "4000": "drizzle",
-        "4001": "rain",
-        "4200": "light_rain",
-        "4201": "heavy_rain",
-        "5000": "snow",
-        "5001": "flurries",
-        "5100": "light_snow",
-        "5101": "heavy_snow",
-        "6000": "freezing_drizzle",
-        "6001": "freezing_rain",
-        "6200": "light Freezing_rain",
-        "6201": "heavy Freezing_rain",
-        "7000": "ice_pellets",
-        "7101": "heavy_ice_pellets",
-        "7102": "light_ice_pellets",
-        "8000": "thunderstorm"
+    "0":{
+        "weatherCode": "unknown",
+        "name"       : "Unknown"
+    },
+    "1000":{
+        "weatherCode": "clear",
+        "name"       : "Clear"
+    },
+    "1001":{
+        "weatherCode": "cloudy",
+        "name"       : "Cloudy"
+    },
+    "1100":{
+        "weatherCode": "mostly_clear",
+        "name"       : "Mostly Clear"
+    },
+    "1101":{
+        "weatherCode": "partly_cloudy",
+        "name"       : "Partly Cloudy"
+    },
+    "1102":{
+        "weatherCode": "mostly_cloudy",
+        "name"       : "Mostly Cloudy"
+    },
+    "2000":{
+        "weatherCode": "fog",
+        "name"       : "Fog"
+    },
+    "2100":{
+        "weatherCode": "light_fog",
+        "name"       : "Light Fog"
+    },
+    "3000":{
+        "weatherCode": "light_wind",
+        "name"       : "Light Wind"
+    },
+    "3001":{
+        "weatherCode": "wind",
+        "name"       : "Wind"
+    },
+    "3002":{
+        "weatherCode": "strong_wind",
+        "name"       : "Strong Wind"
+    },
+    "4000":{
+        "weatherCode": "drizzle",
+        "name"       : "Drizzle"
+    },
+    "4001":{
+        "weatherCode": "rain",
+        "name"       : "Rain"
+    },
+    "4200":{
+        "weatherCode": "light_rain",
+        "name"       : "Light Rain"
+    },
+    "4201":{
+        "weatherCode": "heavy_rain",
+        "name"       : "Heavy Rain"
+    },
+    "5000":{
+        "weatherCode": "snow",
+        "name"       : "Snow"
+    },
+    "5001":{
+        "weatherCode": "flurries",
+        "name"       : "Flurries"
+    },
+    "5100":{
+        "weatherCode": "light_snow",
+        "name"       : "Light Snow"
+    },
+    "5101":{
+        "weatherCode": "heavy_snow",
+        "name"       : "Heavy Snow"
+    },
+    "6000":{
+        "weatherCode": "freezing_drizzle",
+        "name"       : "Freezing Drizzle"
+    },
+    "6001":{
+        "weatherCode": "freezing_rain",
+        "name"       : "Freezing Rain"
+    },
+    "6200":{
+        "weatherCode": "light Freezing_rain",
+        "name"       : "Light Freezing Rain"
+    },
+    "6201":{
+        "weatherCode": "heavy Freezing_rain",
+        "name"       : "Heavy Freezing Rain"
+    },
+    "7000":{
+        "weatherCode": "ice_pellets",
+        "name"       : "Ice Pellets"
+    },
+    "7101":{
+        "weatherCode": "heavy_ice_pellets",
+        "name"       : "Heavy Ice Pellets"
+    },
+    "7102":{
+        "weatherCode": "light_ice_pellets",
+        "name"       : "Light Ice Pellets"
+    },
+    "8000":{
+        "weatherCode": "thunderstorm",
+        "name"       : "Thunderstorm"
     }
 }
