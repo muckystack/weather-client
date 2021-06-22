@@ -2,6 +2,8 @@
 :root{
     --background: rgb(30, 33, 58);
     --dep_background: rgb(16, 14, 29);
+    --color-secondary: rgb(231, 231, 235);
+    --color-tertiary: rgb(88, 86, 118);
 }
 
 *{

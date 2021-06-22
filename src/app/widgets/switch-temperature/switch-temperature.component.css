@@ -1,0 +1,19 @@
+.options-temperature {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  padding: 0 2%;
+}
+
+.btn {
+  margin-left: 1%;
+  border-radius: 50%;
+  background-color: var(--color-tertiary);
+  font-weight: bold;
+  color: white;
+}
+
+.btn.active {
+  background-color: var(--color-secondary);
+  color: #212529;
+}
