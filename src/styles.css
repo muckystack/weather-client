@@ -10,3 +10,16 @@
     color: #E7E7EB;
     font-family: 'Raleway', sans-serif;
 }
+
+.footer {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer p {
+    font-size: .9vw;
+}
