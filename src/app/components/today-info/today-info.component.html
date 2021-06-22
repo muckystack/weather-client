@@ -1,0 +1,28 @@
+<!-- wind status -->
+<div class="today-info-tarjet m-3 w-45">
+    <p class="paragraph">Wind status</p>
+    <p class="num my-3">7<span class="unit">mph</span></p>
+    <!-- footer card -->
+    <ng-container *ngTemplateOutlet="wind_status"></ng-container>
+    
+</div>
+
+<ng-template #wind_status>
+    <span>
+        <button type="button" class="btn btn-secondary btn-lg btn-circle me-2" disabled>
+            <span class="material-icons icon">near_me</span>
+        </button>
+        <span>WSD</span>
+    </span>
+</ng-template>
+
+<ng-template #humidity>
+    <div class="percent">
+        <span>0</span>
+        <span>50</span>
+        <span>100 %</span>
+    </div>
+    <div class="progress progress-bar-size">
+        <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+</ng-template>
