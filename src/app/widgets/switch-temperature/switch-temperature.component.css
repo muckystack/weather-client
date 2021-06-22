@@ -11,9 +11,18 @@
   background-color: var(--color-tertiary);
   font-weight: bold;
   color: white;
+  transition: all 444ms ease-in-out;
+}
+
+.btn:hover {
+  opacity: .7;
 }
 
 .btn.active {
   background-color: var(--color-secondary);
   color: #212529;
+}
+
+.btn.active:hover {
+  opacity: 1;
 }
