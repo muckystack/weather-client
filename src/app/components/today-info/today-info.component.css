@@ -23,20 +23,6 @@
 .w-45{
     width: 45%;
 }
-.btn-circle{
-    border-radius: 50% !important;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    line-height: 100px;
-    vertical-align: middle;
-    padding: 0px;
-}
-.icon {
-    display: block;
-    font-size: 18px;
-    color: #E7E7EB;
-}
 .unit{
     font-size: 36px;
     font-style: normal;

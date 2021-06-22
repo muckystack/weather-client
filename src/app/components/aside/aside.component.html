@@ -4,3 +4,11 @@
   <app-weather-icon class="weather-icon" [img]="'Shower.png'"></app-weather-icon>
 </div>
 <app-current-temp class="current-temp m-3"></app-current-temp>
+
+<div class="p-2 aside-search-modal" #asideSearchModal>
+  <div class="search-modal__close">
+    <button class="btn mt-4 btn-lg btn-circle" (click)="closeModal()">
+      <span class="material-icons icon">close_me</span>
+    </button>
+  </div>
+</div>
