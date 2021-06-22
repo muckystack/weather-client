@@ -1,0 +1,31 @@
+{
+    "weatherCode": {
+        "0": "unknown",
+        "1000": "clear",
+        "1001": "cloudy",
+        "1100": "mostly_clear",
+        "1101": "partly_cloudy",
+        "1102": "mostly_cloudy",
+        "2000": "fog",
+        "2100": "light_fog",
+        "3000": "light_wind",
+        "3001": "wind",
+        "3002": "strong_wind",
+        "4000": "drizzle",
+        "4001": "rain",
+        "4200": "light_rain",
+        "4201": "heavy_rain",
+        "5000": "snow",
+        "5001": "flurries",
+        "5100": "light_snow",
+        "5101": "heavy_snow",
+        "6000": "freezing_drizzle",
+        "6001": "freezing_rain",
+        "6200": "light Freezing_rain",
+        "6201": "heavy Freezing_rain",
+        "7000": "ice_pellets",
+        "7101": "heavy_ice_pellets",
+        "7102": "light_ice_pellets",
+        "8000": "thunderstorm"
+    }
+}
