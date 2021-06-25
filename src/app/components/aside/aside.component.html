@@ -1,9 +1,9 @@
-<app-search-location class="search-bar m-3 px-4 pt-4"></app-search-location>
-<div class="weather-status">
+<app-search-location class="search-bar mx-3 my-2 px-4 pt-4"></app-search-location>
+<div class="weather-status h-30">
   <img src="./assets/weather/Cloud-background.png" alt="" class="weather-background">
   <app-weather-icon class="weather-icon" [img]="'Shower.png'"></app-weather-icon>
 </div>
-<app-current-temp class="current-temp m-3"></app-current-temp>
+<app-current-temp class="current-temp"></app-current-temp>
 
 <div class="p-2 aside-search-modal" #asideSearchModal>
   <div class="search-modal__close">
@@ -12,3 +12,4 @@
     </button>
   </div>
 </div>
+<app-current-details></app-current-details>

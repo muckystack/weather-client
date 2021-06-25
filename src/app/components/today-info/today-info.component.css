@@ -6,7 +6,7 @@
     flex-flow: column nowrap;
     justify-content: space-between;
     align-items: center;
-    padding: 3%;
+    padding: 2%;
 }
 .paragraph {
     margin-bottom: 0;
@@ -24,28 +24,28 @@
     width: 45%;
 }
 .unit{
-    font-size: 36px;
+    font-size: calc(.4em + 1.5vw);
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 42px;
     letter-spacing: 0em;
     text-align: left;
 }
 .num{
-    font-size: 64px;
+    font-size: calc(.4em + 4.7vw);
     font-style: normal;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 75px;
     letter-spacing: 0em;
     text-align: left;
 }
 .progress-bar-size{
-    width: 100%;
+    width: 80%;
     height: 5%;
 }
 .percent{
     display: flex;
-    width: 100%;
+    width: 80%;
     justify-content: space-between;
-    font-size: 14px;
+    font-size: calc(.4em + 0.7vw);
 }

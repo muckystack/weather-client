@@ -4,6 +4,9 @@ button {
     border: none;
     border-radius: 0px;
 }
+.w-50{
+    width: 60% !important;
+}
 .btn-circle{
     border-radius: 50% !important;
     width: 40px;
@@ -16,4 +19,9 @@ button {
 .icon {
     display: block;
     font-size: 18px;
+}
+.text-ellipsis{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }

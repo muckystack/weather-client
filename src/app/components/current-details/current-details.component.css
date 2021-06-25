@@ -1,0 +1,28 @@
+.container >div{
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+}
+.font{
+    font-style: normal;
+    font-weight: 500;
+    font-size: calc(.4em + 0.8vw);
+    line-height: 21px;
+
+}
+span{
+    color: #88869D !important;
+}
+.tittle-temp{
+    color: #A09FB1 !important;
+    font-style: normal;
+    font-weight: 600;
+    font-size: calc(.4em + 2.0vw);
+    line-height: 42px;
+    text-align: center
+}
+.location{
+    flex-flow: row !important;
+    vertical-align: middle;
+}
