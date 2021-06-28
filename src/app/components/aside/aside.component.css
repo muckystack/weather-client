@@ -32,3 +32,36 @@
 .h-30{
     height: 30%;
 }
+
+.form-search {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.input-search {
+    opacity: .8;
+    border: solid 1px var(--color-secondary);
+    display: flex;
+    flex-flow: row nowrap;
+    margin-right: 10px;
+    align-items: center;
+}
+
+#search {
+    border-radius: 0;
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    color: var(--color-secondary);
+}
+
+.btn {
+    border-radius: 0;
+}
+
+.city__icon {
+    border: solid 1px rgba(255, 255, 255, .3);
+    padding: 10px 5px;
+    display: flex;
+    flex-flow: row nowrap;
+}

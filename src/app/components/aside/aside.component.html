@@ -1,15 +1,45 @@
 <app-search-location class="search-bar mx-3 my-2 px-4 pt-4"></app-search-location>
+
 <div class="weather-status h-30">
   <img src="./assets/weather/Cloud-background.png" alt="" class="weather-background">
   <app-weather-icon class="weather-icon" [img]="'Shower.png'"></app-weather-icon>
 </div>
+
 <app-current-temp class="current-temp"></app-current-temp>
 
-<div class="p-2 aside-search-modal" #asideSearchModal>
+<div class="aside-search-modal p-5 pt-3 pb-3" #asideSearchModal>
   <div class="search-modal__close">
     <button class="btn mt-4 btn-lg btn-circle" (click)="closeModal()">
       <span class="material-icons icon">close_me</span>
     </button>
   </div>
+  <form class="form-search mt-4 mb-4">
+    <div class="input-search w-100">
+      <button class="btn btn-lg" style="width: 20px; height: 40px; opacity: .5;" disabled>
+        <span class="material-icons">search_me</span>
+      </button>
+      <input type="text" id="search" class="form-control" placeholder="search location" autocomplete="off">
+    </div>
+    <button class="btn btn-primary">Search</button>
+  </form>
+
+  <!-- <ng-container *ngTemplateOutlet="city"></ng-container> -->
+
 </div>
+
 <app-current-details></app-current-details>
+
+
+<ng-template #city>
+  <div class="city">
+    <div class="city__icon w-100">
+      <p class="city__title w-100">
+        Tarimoro
+      </p>
+      <button class="btn btn-lg mr-2" style="width: 20px; height: 40px; opacity: .5;" disabled>
+        <span class="material-icons">search_me</span>
+      </button>
+    </div>
+  </div>
+</ng-template>
+
