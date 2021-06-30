@@ -67,6 +67,15 @@
   }
 }
 /* mobile responsive */
+@media (max-width: 812px){
+    .aside-search-modal{
+        padding: 0.5rem !important;
+    }
+    .search-bar{
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+    }
+}
 @media (max-width: 375px) {
     .margin-search-button{
         padding-right: 0px !important;
