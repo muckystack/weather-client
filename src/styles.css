@@ -66,3 +66,72 @@
     font-size: calc(1em + 1vw);
   }
 }
+/* mobile responsive */
+@media (max-width: 375px) {
+    .margin-search-button{
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+        padding-top: 0.5rem !important;
+    }
+    .weather-status.h-30{
+        height: 40% !important;
+    }
+    .current-temp {
+        margin-top: -3rem !important;
+    }
+    .temp-unit-4{
+        font-size: calc(.4em + 29vw) !important;
+    }
+    .temp-unit-1{
+        font-size: calc(.4em + 29vw) !important;
+    }
+    .temp-unit-3{
+        font-size: calc(.4em + 20vw) !important;
+    }
+    .temp-unit-2{
+        font-size: calc(.4em + 12.0vw) !important;
+    }
+    .md-view, .md-view > p{
+        font-size: calc(.4em + 7.0vw) !important;
+        margin-top: 0rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+    app-current-details > .font{
+        font-size: calc(.4em + 3.3vw) !important;
+    }
+    app-current-details > div{
+        padding-bottom: 4.7rem;
+    }
+    app-current-details > div >.location{
+        margin-top: 1.9rem !important;
+    }
+    .today-info-tarjet{
+        width: 100% !important;
+        margin-bottom: 1rem !important;
+        padding: 1.3rem !important;
+    }
+    .today-info-tarjet > .paragraph{
+        font-size: calc(.4em + 2.6vw) !important;
+    }
+    .today-info-tarjet > .num{
+        font-size: calc(.4em + 14.7vw) !important;
+    }
+    .today-info-tarjet > span > button{
+        margin-right: 1rem;
+    }
+    .percent{
+        font-size: calc(0.4em + 1.5vw);
+    }
+    .progress-bar-size{
+        height: 0.4rem;
+    }
+    .footer > p {
+        font-size: 3vw;
+    }
+    .aside-search-modal {
+        padding: 1rem!important;
+    }
+    .search-modal__close > button {
+        margin-top: 0.5rem !important;
+    }
+}
