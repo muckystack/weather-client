@@ -18,6 +18,7 @@ import { FormBuilder } from '@angular/forms';
 export class AsideComponent implements OnInit {
   @ViewChild('asideSearchModal') asideSearchModal: ElementRef | any;
   searchLocation:any;
+  locationList:any[] | any;
 
   constructor(
     private _asideServide: AsideService,
@@ -54,6 +55,7 @@ export class AsideComponent implements OnInit {
   search(){
     this._accuwatherService.getAutocompleteSearch(this.searchLocation.value.input).subscribe((resp) =>{
       console.log(resp);
+      this.locationList = resp;
     });
   }
 }

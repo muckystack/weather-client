@@ -23,7 +23,7 @@
     <button class="btn btn-primary">Search</button>
   </form>
 
-  <!-- <ng-container *ngTemplateOutlet="city"></ng-container> -->
+  <ng-container *ngTemplateOutlet="city"></ng-container>
 
 </div>
 
@@ -31,13 +31,13 @@
 
 
 <ng-template #city>
-  <div class="city">
+  <div class="city" *ngFor="let item of locationList">
     <div class="city__icon w-100">
       <p class="city__title w-100">
-        Tarimoro
+        {{item.LocalizedName}}, {{item.AdministrativeArea.LocalizedName}}
       </p>
-      <button class="btn btn-lg mr-2" style="width: 20px; height: 40px; opacity: .5;" disabled>
-        <span class="material-icons">search_me</span>
+      <button class="btn btn-lg mr-2" disabled>
+        <span class="material-icons">keyboard_arrow_right</span>
       </button>
     </div>
   </div>
