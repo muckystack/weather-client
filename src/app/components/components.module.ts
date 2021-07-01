@@ -6,10 +6,11 @@ import { WidgetsModule } from '../widgets/widgets.module';
 import { TomorrowCardComponent } from './tomorrow-card/tomorrow-card.component';
 import { TodayInfoComponent } from './today-info/today-info.component';
 import { CurrentDetailsComponent } from './current-details/current-details.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AsideComponent, ForecastComponent, TomorrowCardComponent, TodayInfoComponent, CurrentDetailsComponent],
-  imports: [CommonModule, WidgetsModule],
+  imports: [CommonModule, WidgetsModule, ReactiveFormsModule],
   exports: [AsideComponent, ForecastComponent, TomorrowCardComponent, TodayInfoComponent, CurrentDetailsComponent],
 })
 export class ComponentsModule {}

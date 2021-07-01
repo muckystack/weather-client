@@ -13,12 +13,12 @@
       <span class="material-icons icon">close_me</span>
     </button>
   </div>
-  <form class="form-search mt-4 mb-4">
+  <form class="form-search mt-4 mb-4" (submit)="search()" [formGroup]="searchLocation">
     <div class="input-search w-100">
       <button class="btn btn-lg" style="width: 20px; height: 40px; opacity: .5;" disabled>
         <span class="material-icons">search_me</span>
       </button>
-      <input type="text" id="search" class="form-control" placeholder="search location" autocomplete="off">
+      <input type="text" id="search" class="form-control" formControlName="input" placeholder="search location" autocomplete="off">
     </div>
     <button class="btn btn-primary">Search</button>
   </form>

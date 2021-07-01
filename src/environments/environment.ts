@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  weatherApiKey: 'c4c080d1c2754b42ba9235506211006',
-  currentEndPoind: 'https://api.weatherapi.com/v1/'
+  Apikey: 'KDVqYoJArgzwPhkWJmcJfYLGorp99rwA',
+  currentEndPoind: 'http://dataservice.accuweather.com/'
 };
 
 /*
