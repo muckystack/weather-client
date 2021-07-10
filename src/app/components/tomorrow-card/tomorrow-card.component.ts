@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { TomorrowData } from 'src/app/models/TomorrowData.model';
+import * as moment from 'moment';
+import { Forecast } from 'src/app/models/Forecast.model';
 
 @Component({
   selector: 'app-tomorrow-card',
@@ -7,9 +8,12 @@ import { TomorrowData } from 'src/app/models/TomorrowData.model';
   styleUrls: ['./tomorrow-card.component.css'],
 })
 export class TomorrowCardComponent implements OnInit {
-  @Input() data: TomorrowData | any;
-
+  @Input() data: Forecast | any;
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    moment.locale('es');
+    this.data.Date = moment(this.data.Date).format('ddd DD MMM').toString();
+    // this.data.Date = this.data.Date.
+  }
 }

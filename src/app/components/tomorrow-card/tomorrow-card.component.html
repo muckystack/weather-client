@@ -1,8 +1,8 @@
 <div class="tomorrow-card">
-  <p class="paragraph">{{ data.title || 'Título' }}</p>
-  <app-weather-icon class="mt-4 mb-4" [img]="data.icon || 'Sleet.png'" [style]="'width: 65%;'"></app-weather-icon>
+  <p class="paragraph">{{ data.Date || 'Título' }}</p>
+  <app-weather-icon class="mt-4 mb-4" [img]="data.Icon || 'Sleet.png'" [style]="'width: 65%;'"></app-weather-icon>
   <p class="paragraph">
-    <span>{{ data.firstDegrees || '0' }}°c</span>
-    <span class="paragraph__opacity">{{ data.secondDegrees || '0' }}°c</span>
+    <span>{{ data.Minimum || '0' }}°c</span>
+    <span class="paragraph__opacity">{{ data.Maximum || '0' }}°c</span>
   </p>
 </div>

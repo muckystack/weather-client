@@ -1,6 +1,6 @@
 export interface Forecast {
   Date: string;
-  Icon: number;
+  Icon: String;
   Minimum: number;
   Maximum: number;
 }

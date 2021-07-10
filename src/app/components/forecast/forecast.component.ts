@@ -1,5 +1,5 @@
-import { TomorrowData } from './../../models/TomorrowData.model';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { AccuweatherService } from 'src/app/services/accuweather.service';
 
 @Component({
   selector: 'app-forecast',
@@ -7,17 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./forecast.component.css'],
 })
 export class ForecastComponent implements OnInit {
-  public tomorrowDataArray: TomorrowData[] | any;
+  forecast: any[] = [];
 
-  constructor() {
-    this.tomorrowDataArray = [
-      new TomorrowData('Tomorrow', 'Shower.png', '16', '11'),
-      new TomorrowData('Sun, 7 Jun', 'Shower.png', '16', '11'),
-      new TomorrowData('Mon, 8 Jun', 'Shower.png', '16', '11'),
-      new TomorrowData('Mon, 9 Jun', 'Sleet.png', '16', '11'),
-      new TomorrowData('Mon, 10 Jun', 'Sleet.png', '16', '11'),
-    ];
+  constructor(private _accuweatherService: AccuweatherService) {}
+
+  ngOnInit(): void {
+    this._accuweatherService.showForecastEvent.subscribe((data) => {
+      if (data) this.forecast = this._accuweatherService.forecast;
+    });
   }
-
-  ngOnInit(): void {}
 }
