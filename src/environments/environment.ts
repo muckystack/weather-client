@@ -4,8 +4,9 @@
 
 export const environment = {
   production: false,
-  Apikey: 'KDVqYoJArgzwPhkWJmcJfYLGorp99rwA',
-  currentEndPoind: 'http://dataservice.accuweather.com/'
+  // Apikey: 'KDVqYoJArgzwPhkWJmcJfYLGorp99rwA',
+  Apikey: 'AL78ywRZvnmYhlNGsKMTT6VUGVKeGHhq',
+  currentEndPoind: 'http://dataservice.accuweather.com/',
 };
 
 /*

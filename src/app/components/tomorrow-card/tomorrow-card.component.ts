@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import * as moment from 'moment';
 import { Forecast } from 'src/app/models/Forecast.model';
 
 @Component({
@@ -12,8 +11,5 @@ export class TomorrowCardComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    moment.locale('es');
-    this.data.Date = moment(this.data.Date).format('ddd DD MMM').toString();
-    // this.data.Date = this.data.Date.
   }
 }

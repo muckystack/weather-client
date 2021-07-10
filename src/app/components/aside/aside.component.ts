@@ -8,7 +8,8 @@ import {
 import { AccuweatherService } from 'src/app/services/accuweather.service';
 import { AsideService } from 'src/app/services/aside.service';
 import { FormBuilder } from '@angular/forms';
-import { Forecast } from 'src/app/models/Forecast.model';
+import { CurrentConditions, Forecast } from 'src/app/models/Forecast.model';
+import { convertDate, urlImg } from 'src/app/utils/util.utils';
 
 @Component({
   selector: 'app-aside',
@@ -19,11 +20,12 @@ export class AsideComponent implements OnInit {
   @ViewChild('asideSearchModal') asideSearchModal: ElementRef | any;
   searchLocation: any;
   locationList: any[] | any;
-  today: Forecast = {
+  today: CurrentConditions = {
     Date: '',
     Icon: '',
-    Maximum: 0,
-    Minimum: 0,
+    Temperature: 0,
+    WeatherText: '',
+    Place: '',
   };
 
   constructor(
@@ -61,23 +63,19 @@ export class AsideComponent implements OnInit {
     this._accuwatherService
       .getAutocompleteSearch(this.searchLocation.value.input)
       .subscribe((resp) => {
-        console.log(resp);
         this.locationList = resp;
       });
   }
 
-  getForecast(id: String) {
+  getForecast(id: String, LocalizedName:String) {
     this._accuwatherService.forecast = [];
     this._accuwatherService.getForecast$(id).subscribe((response: any) => {
       for (let i = 0; i < response.DailyForecasts.length; i++) {
         const element = response.DailyForecasts[i];
-        const icon: String =
-          element.Day.Icon > 9
-            ? `https://developer.accuweather.com/sites/default/files/${element.Day.Icon}-s.png`
-            : `https://developer.accuweather.com/sites/default/files/0${element.Day.Icon}-s.png`;
+        const icon: String = urlImg(element.Day.Icon);
         // this.img = './assets/weather/Shower.png';
         const _forecast: Forecast = {
-          Date: element.Date,
+          Date: convertDate(element.Date),
           Icon: icon,
           Minimum: Math.round(
             ((parseInt(element.Temperature.Minimum.Value) - 32) * 5) / 9
@@ -86,7 +84,20 @@ export class AsideComponent implements OnInit {
             ((parseInt(element.Temperature.Maximum.Value) - 32) * 5) / 9
           ),
         };
-        if (i === 0) this.today = _forecast;
+        if (i === 0) {
+          this.today.Place = LocalizedName;
+          this._accuwatherService
+            .getCurrentConditions$(id)
+            .subscribe((responseCurrent: any) => {
+              this.today.Date = convertDate(
+                responseCurrent[0].LocalObservationDateTime
+              );
+              this.today.Icon = urlImg(responseCurrent[0].WeatherIcon);
+              this.today.Temperature =
+                responseCurrent[0].Temperature.Metric.Value;
+              this.today.WeatherText = responseCurrent[0].WeatherText;
+            });
+        }
 
         this._accuwatherService.forecast.push(_forecast);
         this._accuwatherService.showForecastEvent.emit(true);

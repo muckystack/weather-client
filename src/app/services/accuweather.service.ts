@@ -2,7 +2,6 @@ import { environment } from './../../environments/environment';
 import { EventEmitter, Injectable, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Data } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -28,6 +27,12 @@ export class AccuweatherService {
   getForecast$(id: String) {
     return this.http.get(
       `${environment.currentEndPoind}forecasts/v1/daily/5day/${id}?apikey=${environment.Apikey}&language=ES`
+    );
+  }
+
+  getCurrentConditions$(id: String) {
+    return this.http.get(
+      `${environment.currentEndPoind}currentconditions/v1/${id}?apikey=${environment.Apikey}&language=ES`
     );
   }
 }

@@ -1,17 +1,17 @@
 <div class="container font">
     <div class="my-5 md-view" style="color: #A09FB1;">
-        <p class="tittle-temp">Shower</p>
+        <p class="tittle-temp">{{ currentConditions.WeatherText }}</p>
     </div>
     <div class="mb-4">
         <span>
             <span class="me-2">Today</span>
             <span>&#183;</span>
-            <span class="ms-2">Fri, 5 Jun</span>
+            <span class="ms-2">{{ currentConditions.Date }}</span>
         </span>
     </div>
     <div class="mb-4 location">
         <span class="material-icons icon me-1">place</span>
-        <span>Tarimoro</span>
+        <span>{{ currentConditions.Place }}</span>
     </div>
 
 </div>

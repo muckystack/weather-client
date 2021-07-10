@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./current-temp.component.css'],
 })
 export class CurrentTempComponent implements OnInit {
-  @Input() temperature = '0';
+  @Input() temperature = 0;
 
   constructor() {}
 

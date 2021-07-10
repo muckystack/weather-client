@@ -5,7 +5,7 @@
   <app-weather-icon class="weather-icon" [img]="today.Icon" [mywidth]="'250'" *ngIf="today.Icon !== ''"></app-weather-icon>
 </div>
 
-<app-current-temp class="current-temp"></app-current-temp>
+<app-current-temp class="current-temp" [temperature]="today.Temperature" *ngIf="today.Temperature !== 0"></app-current-temp>
 
 <div class="aside-search-modal p-5 pt-3 pb-3" #asideSearchModal>
   <div class="search-modal__close">
@@ -27,11 +27,11 @@
 
 </div>
 
-<app-current-details></app-current-details>
+<app-current-details [currentConditions]="today"></app-current-details>
 
 
 <ng-template #city>
-  <div class="city" *ngFor="let item of locationList" (click)="getForecast(item.Key)">
+  <div class="city" *ngFor="let item of locationList" (click)="getForecast(item.Key, item.LocalizedName)">
     <div class="city__icon w-100">
       <p class="city__title w-100">
         {{item.LocalizedName}}, {{item.AdministrativeArea.LocalizedName}}
