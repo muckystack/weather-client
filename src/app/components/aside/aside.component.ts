@@ -48,6 +48,15 @@ export class AsideComponent implements OnInit {
           '0%'
         );
     });
+    this.getLocation();
+  }
+
+  getLocation() {
+    this._accuwatherService.getPosition().then((pos) => {
+      // this.latitude = pos.lat;
+      // this.longitude = pos.lng;
+      console.log(pos);
+    });
   }
 
   closeModal() {
@@ -67,7 +76,7 @@ export class AsideComponent implements OnInit {
       });
   }
 
-  getForecast(id: String, LocalizedName:String) {
+  getForecast(id: String, LocalizedName: String) {
     this._accuwatherService.forecast = [];
     this._accuwatherService.getForecast$(id).subscribe((response: any) => {
       for (let i = 0; i < response.DailyForecasts.length; i++) {

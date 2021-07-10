@@ -35,4 +35,17 @@ export class AccuweatherService {
       `${environment.currentEndPoind}currentconditions/v1/${id}?apikey=${environment.Apikey}&language=ES`
     );
   }
+
+  getPosition(): Promise<any> {
+    return new Promise((resolve, reject) => {
+      navigator.geolocation.getCurrentPosition(
+        (resp) => {
+          resolve({ lng: resp.coords.longitude, lat: resp.coords.latitude });
+        },
+        (err) => {
+          reject(err);
+        }
+      );
+    });
+  }
 }
