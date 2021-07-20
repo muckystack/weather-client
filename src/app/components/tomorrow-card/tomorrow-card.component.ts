@@ -8,6 +8,7 @@ import { Forecast } from 'src/app/models/Forecast.model';
 })
 export class TomorrowCardComponent implements OnInit {
   @Input() data: Forecast | any;
+  @Input() isFahrenheit: boolean = false;
   constructor() {}
 
   ngOnInit(): void {

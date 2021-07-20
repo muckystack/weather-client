@@ -1,7 +1,7 @@
 <div class="container">
   <app-switch-temperature></app-switch-temperature>
   <div class="cards">
-    <app-tomorrow-card class="m-3" *ngFor="let item of forecast" [data]="item"></app-tomorrow-card>
+    <app-tomorrow-card [isFahrenheit]="isFahrenheit" class="m-3" *ngFor="let item of forecast" [data]="item"></app-tomorrow-card>
   </div>
 </div>
 

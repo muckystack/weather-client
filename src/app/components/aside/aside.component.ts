@@ -9,7 +9,7 @@ import { AccuweatherService } from 'src/app/services/accuweather.service';
 import { AsideService } from 'src/app/services/aside.service';
 import { FormBuilder } from '@angular/forms';
 import { CurrentConditions, Forecast } from 'src/app/models/Forecast.model';
-import { convertDate, urlImg } from 'src/app/utils/util.utils';
+import { convertDate, fahrenheitToCelsius, urlImg } from 'src/app/utils/util.utils';
 
 @Component({
   selector: 'app-aside',
@@ -24,9 +24,11 @@ export class AsideComponent implements OnInit {
     Date: '',
     Icon: '',
     Temperature: 0,
+    celsius: 0,
     WeatherText: '',
     Place: '',
   };
+  isFahrenheit: boolean = false;
 
   constructor(
     private _asideServide: AsideService,
@@ -49,6 +51,8 @@ export class AsideComponent implements OnInit {
         );
     });
     this.getLocation();
+
+    this.changeMetric();
   }
 
   getLocation() {
@@ -86,12 +90,10 @@ export class AsideComponent implements OnInit {
         const _forecast: Forecast = {
           Date: convertDate(element.Date),
           Icon: icon,
-          Minimum: Math.round(
-            ((parseInt(element.Temperature.Minimum.Value) - 32) * 5) / 9
-          ),
-          Maximum: Math.round(
-            ((parseInt(element.Temperature.Maximum.Value) - 32) * 5) / 9
-          ),
+          Minimum: element.Temperature.Minimum.Value,
+          Maximum: element.Temperature.Maximum.Value,
+          minCelsius: fahrenheitToCelsius(element.Temperature.Minimum.Value),
+          maxCelsius: fahrenheitToCelsius(element.Temperature.Maximum.Value),
         };
         if (i === 0) {
           this.today.Place = LocalizedName;
@@ -102,9 +104,9 @@ export class AsideComponent implements OnInit {
                 responseCurrent[0].LocalObservationDateTime
               );
               this.today.Icon = urlImg(responseCurrent[0].WeatherIcon);
-              this.today.Temperature =
-                responseCurrent[0].Temperature.Metric.Value;
-              this.today.WeatherText = responseCurrent[0].WeatherText;
+              this.today.Temperature  = responseCurrent[0].Temperature.Imperial.Value;
+              this.today.celsius      = responseCurrent[0].Temperature.Metric.Value;
+              this.today.WeatherText  = responseCurrent[0].WeatherText;
             });
         }
 
@@ -112,6 +114,12 @@ export class AsideComponent implements OnInit {
         this._accuwatherService.showForecastEvent.emit(true);
         this.closeModal();
       }
+    });
+  }
+
+  changeMetric(){
+    this._accuwatherService.isFahrenheit.subscribe((unitMetric) => {
+      this.isFahrenheit = unitMetric;
     });
   }
 }

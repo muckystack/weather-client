@@ -10,3 +10,8 @@ export function urlImg(img: any): String {
     ? `https://developer.accuweather.com/sites/default/files/${img}-s.png`
     : `https://developer.accuweather.com/sites/default/files/0${img}-s.png`;
 }
+export function fahrenheitToCelsius(value:string): number{
+  return Math.round(
+    ((parseInt(value) - 32) * 5) / 9
+  );
+}

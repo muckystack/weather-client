@@ -2,7 +2,7 @@
   <p class="paragraph">{{ data.Date || 'Título' }}</p>
   <app-weather-icon class="mt-4 mb-4" [img]="data.Icon || 'Sleet.png'" [style]="'width: 65%;'"></app-weather-icon>
   <p class="paragraph">
-    <span>{{ data.Minimum || '0' }}°c</span>
-    <span class="paragraph__opacity">{{ data.Maximum || '0' }}°c</span>
+    <span>{{ isFahrenheit ? data.Minimum : data.minCelsius}}°{{isFahrenheit ? "f" : "c"}}</span>
+    <span class="paragraph__opacity">{{isFahrenheit ? data.Maximum : data.maxCelsius}}°{{isFahrenheit ? "f" : "c"}}</span>
   </p>
 </div>

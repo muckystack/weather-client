@@ -8,12 +8,20 @@ import { AccuweatherService } from 'src/app/services/accuweather.service';
 })
 export class ForecastComponent implements OnInit {
   forecast: any[] = [];
+  isFahrenheit: boolean = false;
 
   constructor(private _accuweatherService: AccuweatherService) {}
 
   ngOnInit(): void {
     this._accuweatherService.showForecastEvent.subscribe((data) => {
       if (data) this.forecast = this._accuweatherService.forecast;
+    });
+    this.changeMetric();
+  }
+
+  changeMetric(){
+    this._accuweatherService.isFahrenheit.subscribe((unitMetric) => {
+      this.isFahrenheit = unitMetric;
     });
   }
 }

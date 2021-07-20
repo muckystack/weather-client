@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { AccuweatherService } from 'src/app/services/accuweather.service';
 
 @Component({
   selector: 'app-switch-temperature',
@@ -8,11 +9,18 @@ import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 export class SwitchTemperatureComponent implements OnInit {
   public btnActive: String | any = 'c';
 
-  constructor(private renderer2: Renderer2) {}
+  constructor(
+    private _accuwatherService: AccuweatherService,
+  ) {}
 
   ngOnInit(): void {}
 
   switchTemperature(item: String) {
+    if(item == "c"){
+      this._accuwatherService.isFahrenheit.emit(false);
+    }else{
+      this._accuwatherService.isFahrenheit.emit(true);
+    }
     this.btnActive = item;
   }
 }

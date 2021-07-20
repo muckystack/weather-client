@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CurrentTempComponent implements OnInit {
   @Input() temperature = 0;
+  @Input() isFahrenheit = false;
 
   constructor() {}
 

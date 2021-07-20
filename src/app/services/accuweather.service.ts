@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class AccuweatherService {
   @Output() showForecastEvent: EventEmitter<any> = new EventEmitter();
+  @Output() isFahrenheit: EventEmitter<boolean> = new EventEmitter();
   forecast: any[] = [];
 
   constructor(private http: HttpClient) {}
