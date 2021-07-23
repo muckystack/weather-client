@@ -8,7 +8,6 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TodayInfoComponent implements OnInit {
   @Input() isFahrenheit: boolean = false;
   @Input() currentConditions: any;
-  @Input() tipe: string='';
 
   constructor() { }
 

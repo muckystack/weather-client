@@ -111,16 +111,16 @@ export class AsideComponent implements OnInit {
                 responseCurrent[0].LocalObservationDateTime
               );
               this.today.Icon = urlImg(responseCurrent[0].WeatherIcon);
-              this.today.Temperature  = responseCurrent[0].Temperature.Imperial.Value;
-              this.today.celsius      = responseCurrent[0].Temperature.Metric.Value;
+              this.today.Temperature  = Math.round(responseCurrent[0].Temperature.Imperial.Value);
+              this.today.celsius      = Math.round(responseCurrent[0].Temperature.Metric.Value);
               this.today.WeatherText  = responseCurrent[0].WeatherText;
-              this.today.windSpeedKmH = responseCurrent[0].Wind.Speed.Metric.value;
-              this.today.windSpeedMiH = responseCurrent[0].Wind.Speed.Imperial.Value;
-              this.today.humidity     = responseCurrent[0].RelativeHumidity;
-              this.today.visibilityKm = responseCurrent[0].Visibility.Metric.Value;
-              this.today.visibilityMi = responseCurrent[0].Visibility.Imperial.Value;
-              this.today.pressureMb   = responseCurrent[0].Pressure.Metric.Value;
-              this.today.pressureInHg = responseCurrent[0].Pressure.Imperial.Value;
+              this.today.windSpeedKmH = Math.round(responseCurrent[0].Wind.Speed.Metric.Value);
+              this.today.windSpeedMiH = Math.round(responseCurrent[0].Wind.Speed.Imperial.Value);
+              this.today.humidity     = Math.round(responseCurrent[0].RelativeHumidity);
+              this.today.visibilityKm = Math.round(responseCurrent[0].Visibility.Metric.Value);
+              this.today.visibilityMi = Math.round(responseCurrent[0].Visibility.Imperial.Value);
+              this.today.pressureMb   = Math.round(responseCurrent[0].Pressure.Metric.Value);
+              this.today.pressureInHg = Math.round(responseCurrent[0].Pressure.Imperial.Value);
             });
           this._accuwatherService.currentConditions.push(this.today);
         }

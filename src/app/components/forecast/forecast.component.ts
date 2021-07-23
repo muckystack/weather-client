@@ -18,13 +18,13 @@ export class ForecastComponent implements OnInit {
       if (data) {
         this.forecast = this._accuweatherService.forecast;
         this.currentConditions = this._accuweatherService.currentConditions;
-        // console.log(this.currentConditions);
+        console.log('currentConditions:', this.currentConditions);
       }
     });
     this.changeMetric();
   }
 
-  changeMetric(){
+  changeMetric() {
     this._accuweatherService.isFahrenheit.subscribe((unitMetric) => {
       this.isFahrenheit = unitMetric;
     });

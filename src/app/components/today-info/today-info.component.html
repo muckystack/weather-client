@@ -1,49 +1,38 @@
 <!-- wind status -->
 <div class="today-info-tarjet my-2 w-45" *ngIf="currentConditions.length > 0">
-    <p class="paragraph">Wind status</p>
-    <p class="num my-2 mb-3">{{isFahrenheit? currentConditions[0].windSpeedMiH : currentConditions[0].windSpeedKmH }}<span class="unit">{{isFahrenheit? "mph" : "km/h"}}</span></p>
-    <!-- footer card -->
-    <div *ngIf="tipe === 'wind' ">
-        <ng-container *ngTemplateOutlet="wind_status"></ng-container>
-    </div>
-    <span *ngIf="tipe === 'humidity' " style="width: 100%;">
-        <ng-container *ngTemplateOutlet="humidity"></ng-container>
-    </span>
-    
-</div>
-<!-- <div class="today-info-tarjet my-2 w-45">
-    <p class="paragraph">Wind status</p>
-    <p class="num my-2 mb-3">7<span class="unit">mph</span></p>
-    <ng-container *ngTemplateOutlet="humidity"></ng-container>
-    
-</div>
-<div class="today-info-tarjet my-2 w-45">
-    <p class="paragraph">Wind status</p>
-    <p class="num my-2 mb-3">7<span class="unit">mph</span></p>
-    
-</div>
-<div class="today-info-tarjet my-2 w-45">
-    <p class="paragraph">Wind status</p>
-    <p class="num my-2 mb-3">7<span class="unit">mph</span></p>
-    
-</div> -->
-
-<ng-template #wind_status>
+    <p class="paragraph">Wind</p>
+    <p class="num my-2 mb-3">{{isFahrenheit ? currentConditions[0].windSpeedMiH : currentConditions[0].windSpeedKmH }}<span class="unit">{{isFahrenheit ? "mph" : "km/h"}}</span></p>
     <span >
         <button type="button" class="btn btn-secondary btn-lg btn-circle me-3" disabled>
             <span class="material-icons icon">near_me</span>
         </button>
         <span>WSD</span>
     </span>
-</ng-template>
 
-<ng-template #humidity >
+</div>
+
+<div class="today-info-tarjet my-2 w-45" *ngIf="currentConditions.length > 0">
+    <p class="paragraph">Humidity</p>
+    <p class="num my-2 mb-3">{{ currentConditions[0].humidity }}</p>
     <div class="percent">
         <span>0</span>
         <span>50</span>
         <span>100 %</span>
     </div>
     <div class="progress progress-bar-size">
-        <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="progress-bar bg-warning" role="progressbar" [style.width]="currentConditions[0].humidity + '%'" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
-</ng-template>
+    
+</div>
+
+<div class="today-info-tarjet my-2 w-45" *ngIf="currentConditions.length > 0">
+    <p class="paragraph">Visibility</p>
+    <p class="num my-2 mb-3">{{isFahrenheit ? currentConditions[0].visibilityMi : currentConditions[0].visibilityKm }}<span class="unit">{{isFahrenheit ? "mph" : "km/h"}}</span></p>
+    
+</div>
+
+<div class="today-info-tarjet my-2 w-45" *ngIf="currentConditions.length > 0">
+    <p class="paragraph">Air Pressure</p>
+    <p class="num my-2 mb-3">{{isFahrenheit ? currentConditions[0].pressureInHg : currentConditions[0].pressureMb }}<span class="unit">{{isFahrenheit ? "InHg" : "Mb"}}</span></p>
+    
+</div>
