@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-today-info',
@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./today-info.component.css']
 })
 export class TodayInfoComponent implements OnInit {
+  @Input() isFahrenheit: boolean = false;
+  @Input() currentConditions: any;
+  @Input() tipe: string='';
 
   constructor() { }
 
   ngOnInit(): void {
+    console.log(this.currentConditions);
   }
 
 }

@@ -10,6 +10,7 @@ export class AccuweatherService {
   @Output() showForecastEvent: EventEmitter<any> = new EventEmitter();
   @Output() isFahrenheit: EventEmitter<boolean> = new EventEmitter();
   forecast: any[] = [];
+  currentConditions: any[] = [];
 
   constructor(private http: HttpClient) {}
 
@@ -33,7 +34,7 @@ export class AccuweatherService {
 
   getCurrentConditions$(id: String) {
     return this.http.get(
-      `${environment.currentEndPoind}currentconditions/v1/${id}?apikey=${environment.Apikey}&language=ES`
+      `${environment.currentEndPoind}currentconditions/v1/${id}?apikey=${environment.Apikey}&language=ES&details=true`
     );
   }
 

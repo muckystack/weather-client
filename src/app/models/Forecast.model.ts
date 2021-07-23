@@ -14,4 +14,11 @@ export interface CurrentConditions {
   celsius: number;
   WeatherText: String;
   Place: String;
+  windSpeedKmH: number;
+  windSpeedMiH: number;
+  humidity: number;
+  visibilityKm: number;
+  visibilityMi: number;
+  pressureMb: number;
+  pressureInHg: number;
 }

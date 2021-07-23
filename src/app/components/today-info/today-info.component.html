@@ -1,35 +1,35 @@
 <!-- wind status -->
-<div class="today-info-tarjet my-2 w-45">
+<div class="today-info-tarjet my-2 w-45" *ngIf="currentConditions.length > 0">
     <p class="paragraph">Wind status</p>
-    <p class="num my-2 mb-3">7<span class="unit">mph</span></p>
+    <p class="num my-2 mb-3">{{isFahrenheit? currentConditions[0].windSpeedMiH : currentConditions[0].windSpeedKmH }}<span class="unit">{{isFahrenheit? "mph" : "km/h"}}</span></p>
     <!-- footer card -->
-    <ng-container *ngTemplateOutlet="wind_status"></ng-container>
+    <div *ngIf="tipe === 'wind' ">
+        <ng-container *ngTemplateOutlet="wind_status"></ng-container>
+    </div>
+    <span *ngIf="tipe === 'humidity' " style="width: 100%;">
+        <ng-container *ngTemplateOutlet="humidity"></ng-container>
+    </span>
     
 </div>
-<div class="today-info-tarjet my-2 w-45">
+<!-- <div class="today-info-tarjet my-2 w-45">
     <p class="paragraph">Wind status</p>
     <p class="num my-2 mb-3">7<span class="unit">mph</span></p>
-    <!-- footer card -->
     <ng-container *ngTemplateOutlet="humidity"></ng-container>
     
 </div>
 <div class="today-info-tarjet my-2 w-45">
     <p class="paragraph">Wind status</p>
     <p class="num my-2 mb-3">7<span class="unit">mph</span></p>
-    <!-- footer card -->
-    <!-- <ng-container *ngTemplateOutlet="wind_status"></ng-container> -->
     
 </div>
 <div class="today-info-tarjet my-2 w-45">
     <p class="paragraph">Wind status</p>
     <p class="num my-2 mb-3">7<span class="unit">mph</span></p>
-    <!-- footer card -->
-    <!-- <ng-container *ngTemplateOutlet="wind_status"></ng-container> -->
     
-</div>
+</div> -->
 
 <ng-template #wind_status>
-    <span>
+    <span >
         <button type="button" class="btn btn-secondary btn-lg btn-circle me-3" disabled>
             <span class="material-icons icon">near_me</span>
         </button>
@@ -37,7 +37,7 @@
     </span>
 </ng-template>
 
-<ng-template #humidity>
+<ng-template #humidity >
     <div class="percent">
         <span>0</span>
         <span>50</span>

@@ -27,6 +27,13 @@ export class AsideComponent implements OnInit {
     celsius: 0,
     WeatherText: '',
     Place: '',
+    windSpeedKmH: 0,
+    windSpeedMiH: 0,
+    humidity: 0,
+    visibilityKm: 0,
+    visibilityMi: 0,
+    pressureMb: 0,
+    pressureInHg: 0,
   };
   isFahrenheit: boolean = false;
 
@@ -107,7 +114,15 @@ export class AsideComponent implements OnInit {
               this.today.Temperature  = responseCurrent[0].Temperature.Imperial.Value;
               this.today.celsius      = responseCurrent[0].Temperature.Metric.Value;
               this.today.WeatherText  = responseCurrent[0].WeatherText;
+              this.today.windSpeedKmH = responseCurrent[0].Wind.Speed.Metric.value;
+              this.today.windSpeedMiH = responseCurrent[0].Wind.Speed.Imperial.Value;
+              this.today.humidity     = responseCurrent[0].RelativeHumidity;
+              this.today.visibilityKm = responseCurrent[0].Visibility.Metric.Value;
+              this.today.visibilityMi = responseCurrent[0].Visibility.Imperial.Value;
+              this.today.pressureMb   = responseCurrent[0].Pressure.Metric.Value;
+              this.today.pressureInHg = responseCurrent[0].Pressure.Imperial.Value;
             });
+          this._accuwatherService.currentConditions.push(this.today);
         }
 
         this._accuwatherService.forecast.push(_forecast);

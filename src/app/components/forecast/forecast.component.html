@@ -9,7 +9,10 @@
   <h2 class="tittle">Today's hightlight</h2>
 </div>
 <div class="container my-0">
-  <app-today-info class="w-100 d-flex flex-wrap justify-content-between px-3"></app-today-info>
+  <app-today-info [isFahrenheit]="isFahrenheit" [currentConditions]="currentConditions" [tipe]="'wind'" class="w-100 d-flex flex-wrap justify-content-between px-3"></app-today-info>
+  <app-today-info [isFahrenheit]="isFahrenheit" [currentConditions]="currentConditions" [tipe]="'humidity'" class="w-100 d-flex flex-wrap justify-content-between px-3"></app-today-info>
+  <!-- <app-today-info [isFahrenheit]="isFahrenheit" [currentConditions]="currentConditions" [tipe]="'visbility'" class="w-100 d-flex flex-wrap justify-content-between px-3"></app-today-info>
+  <app-today-info [isFahrenheit]="isFahrenheit" [currentConditions]="currentConditions" [tipe]="'airPressure'" class="w-100 d-flex flex-wrap justify-content-between px-3"></app-today-info> -->
 </div>
 <!-- today info -->
 
